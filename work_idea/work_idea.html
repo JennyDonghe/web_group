@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Surf Club Wall — Nasty Nets Author Ideas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Surf Club Wall</h1>
+    <p class="sub">Hover an image to see the author’s idea. Random sources, collective posting, responsive grid.</p>
+    <div class="tools">
+      <div class="search" role="search" aria-label="Search posts">
+        <span aria-hidden="true">🔎</span>
+        <input id="q" placeholder="Search by poster, tag, or text…" autocomplete="off" />
+      </div>
+      <button class="pill" data-filter="all" data-active="true">All</button>
+      <button class="pill" data-filter="found-media">Found media</button>
+      <button class="pill" data-filter="browser-aesthetics">Browser aesthetics</button>
+      <button class="pill" data-filter="just-below-meme">Just-below-meme</button>
+      <button class="pill" data-filter="remix">Remix</button>
+      <button class="btn" id="shuffle">Shuffle</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="grid" class="grid" aria-live="polite"></section>
+    <p id="empty" class="empty">No matches. Try another search or clear filters.</p>
+  </main>
+
+  <footer>
+    <div>Tip: press <kbd>Tab</kbd> to focus a tile, then space to keep the overlay visible.</div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

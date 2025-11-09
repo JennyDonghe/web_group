@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Reflection — Nasty Nets</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #0b0c10;
+      color: #e6e7ee;
+      font-family: system-ui, sans-serif;
+    }
+
+    .reflection-container {
+      text-align: center;
+      max-width: 800px;
+    }
+
+    .reflection-title {
+      font-size: 30px;
+      letter-spacing: 0.5px;
+      margin-bottom: 30px;
+      color: #9dd8ff;
+    }
+
+    .reflection-box {
+      width: 80vw;
+      max-width: 700px;
+      min-height: 220px;
+      border-radius: 18px;
+      background: linear-gradient(145deg, #111319, #0a0a0f);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+      padding: 24px 30px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .reflection-box:hover {
+      background: linear-gradient(145deg, #1a1c24, #111319);
+      transform: translateY(-2px);
+    }
+
+    .reflection-text {
+      opacity: 0;
+      transition: opacity 0.6s ease;
+      font-size: 17px;
+      line-height: 1.7;
+      color: #d5e8f8;
+      text-align: left;
+      white-space: pre-line;
+    }
+
+    .reflection-box:hover .reflection-text {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="reflection-container">
+    <h1 class="reflection-title">Reflection: Nasty Nets & Interactive Artwork</h1>
+    <div class="reflection-box">
+      <p class="reflection-text">
+Interacting with Nasty Nets feels like stumbling into a time capsule built from half-forgotten tabs. The experience isn’t about a single “piece” so much as the strange rhythm of browsing itself—clicking through GIFs, broken embeds, and odd scraps of the early web that somehow add up to a portrait of collective curiosity.
+
+Unlike a polished museum installation, Nasty Nets deliberately looks like an ordinary blog: default fonts, awkward spacing, posts stacked without hierarchy. That banality is part of the art. It reminds you how every hyperlink once felt like a tiny adventure, how discovery used to happen through randomness rather than algorithmic prediction.
+
+The interactivity lies in participation. You scroll, click, wander, maybe laugh, maybe get lost; the artists did the same when they made it. Each post is both artifact and invitation—an open browser window asking what it means to be online together. It’s less a finished object than a living network of impulses: boredom, humor, imitation, critique.
+
+In the end, the “artwork” is the act of surfing itself—the motion between pages, the micro-choices, the messy collective of human attention stitched across the web.
+      </p>
+    </div>
+  </div>
+</body>
+</html>

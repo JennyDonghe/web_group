@@ -14,7 +14,6 @@ const $btn   = $("#shuffle");
 function src(feature, i){ return `assets/${feature}${i}.${EXT}`; }
 function preload(u){ const im=new Image(); im.src=u; }
 
-// --- face shuffle ---
 function shuffle(){
   const li=r1(COUNTS.lefteye), ri=r1(COUNTS.righteye), ni=r1(COUNTS.nose), mi=r1(COUNTS.mouth);
   const leftSrc  = src("lefteye",  li);
@@ -43,22 +42,22 @@ const PALETTES = [
 let idx = -1;
 
 function cycleButtonStyle(){
-  // step through palettes (no repeat), also randomize angle
+  
   idx = (idx + 1) % PALETTES.length;
   const [a,b] = PALETTES[idx];
   const angle = r(360);
   const grad  = `linear-gradient(${angle}deg, ${a}, ${b})`;
 
-  // IMPORTANT: override any external CSS (even with !important)
+  
   $btn.style.setProperty("background", grad, "important");
   $btn.style.setProperty("box-shadow", `0 10px 26px ${a}66`, "important");
   $btn.style.color = "#fff";
 
-  // little click animation
+  
   $btn.style.transform = "scale(1.06)";
   setTimeout(()=>{ $btn.style.transform = "scale(1)"; }, 150);
 }
 
 $btn.addEventListener("click", shuffle);
 document.addEventListener("keydown", e=>{ if(e.code==="Space"){ e.preventDefault(); shuffle(); }});
-shuffle();   // initial render
+shuffle();   

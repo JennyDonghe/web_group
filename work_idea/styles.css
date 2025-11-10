@@ -20,7 +20,7 @@ body{
   background-attachment:fixed;
 }
 
-/* header / controls */
+
 header{
   position:sticky; top:0; z-index:10;
   backdrop-filter:saturate(140%) blur(6px);
@@ -51,12 +51,12 @@ h1{margin:0 0 4px; font-size:clamp(20px,3.8vw,40px)}
 }
 .search input{all:unset;width:100%;color:var(--ink)}
 
-/* grid layout */
+
 main{padding:18px 16px 40px}
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
-  gap:0; /* we’ll use border lines instead */
+  gap:0; 
   border-top:1px solid var(--line);
   border-left:1px solid var(--line);
 }
@@ -77,7 +77,7 @@ main{padding:18px 16px 40px}
 .who{font-weight:600}
 .src{color:var(--muted);font-size:.85rem}
 
-/* overlay on hover/focus */
+
 .overlay{
   position:absolute;inset:0;
   display:grid;place-items:end;
@@ -106,7 +106,7 @@ main{padding:18px 16px 40px}
 footer{color:#95a2b7;font-size:.9rem;padding:16px;text-align:center}
 .empty{opacity:.75;padding:28px 16px;display:none}
 
-/* subtle glowing accent */
+
 .glow{
   position:absolute;right:10px;bottom:10px;width:18px;height:18px;border-radius:50%;
   background:conic-gradient(from 210deg,var(--accent),var(--accent2),var(--accent));

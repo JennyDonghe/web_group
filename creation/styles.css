@@ -6,7 +6,7 @@ html, body {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
 }
 
-/* black title */
+
 #title {
   color: #000;
   font-size: 2.2rem;
@@ -14,7 +14,7 @@ html, body {
   margin: 24px 0 8px;
 }
 
-/* colorful shuffle button */
+
 #shuffle {
   margin: 10px 0 20px;
   padding: 20px 60px;
@@ -30,7 +30,7 @@ html, body {
 }
 #shuffle:hover { transform: scale(1.05); }
 
-/* responsive face area */
+
 .stage {
   position: relative;
   width: min(92vw, 700px);

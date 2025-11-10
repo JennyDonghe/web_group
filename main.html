@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Web Presentation</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: #000;
+      overflow: hidden;
+    }
+    iframe {
+      width: 100vw;
+      height: 100vh;
+      border: none;
+      transition: opacity 0.3s ease;
+    }
+    #hint {
+      position: fixed;
+      bottom: 10px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      color: #fff;
+      font-family: system-ui, sans-serif;
+      font-size: 0.9rem;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <iframe id="frame" src="artist/index.html"></iframe>
+  <div id="hint">Press ← or → to navigate slides</div>
+
+  <script>
+    const slides = [
+      "artist/index.html",
+      "work_idea/work_idea.html",
+      "reflection/reflection.html",
+      "creation/index.html"
+    ];
+    let i = 0;
+    const frame = document.getElementById("frame");
+
+    function clamp(n, lo, hi){ return Math.max(lo, Math.min(hi, n)); }
+
+    function showSlide(n){
+      const next = clamp(n, 0, slides.length - 1);
+      if(next === i) return;
+      i = next;
+      frame.style.opacity = 0;
+      setTimeout(()=>{
+        frame.src = slides[i];
+        frame.onload = () => frame.style.opacity = 1;
+      }, 200);
+    }
+
+    // keyboard navigation from top page
+    window.addEventListener("keydown", e => {
+      if (e.code === "ArrowRight") { e.preventDefault(); showSlide(i + 1); }
+      if (e.code === "ArrowLeft")  { e.preventDefault(); showSlide(i - 1); }
+    });
+
+    // attach arrow key handlers inside iframe as well (so it still works after clicking inside)
+    frame.addEventListener("load", () => {
+      try {
+        const win = frame.contentWindow;
+        const doc = frame.contentDocument;
+        if (doc && doc.body) doc.body.tabIndex = 0;
+        const handler = e => {
+          if (e.code === "ArrowRight") { e.preventDefault(); showSlide(i + 1); }
+          if (e.code === "ArrowLeft")  { e.preventDefault(); showSlide(i - 1); }
+        };
+        win.addEventListener("keydown", handler);
+        doc.addEventListener("keydown", handler);
+      } catch (err) {
+        // fallback for cross-origin
+      }
+    });
+  </script>
+</body>
+</html>

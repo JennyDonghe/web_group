@@ -1,5 +1,4 @@
-// Content: replace or extend with your own images/blurbs.
-// Put the images in ./assets/ with these filenames or edit the paths below.
+
 const DATA = [
   {
     img: "wine.png",

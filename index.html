@@ -58,13 +58,13 @@
       }, 200);
     }
 
-    // keyboard navigation from top page
+   
     window.addEventListener("keydown", e => {
       if (e.code === "ArrowRight") { e.preventDefault(); showSlide(i + 1); }
       if (e.code === "ArrowLeft")  { e.preventDefault(); showSlide(i - 1); }
     });
 
-    // attach arrow key handlers inside iframe as well (so it still works after clicking inside)
+   
     frame.addEventListener("load", () => {
       try {
         const win = frame.contentWindow;
@@ -77,7 +77,7 @@
         win.addEventListener("keydown", handler);
         doc.addEventListener("keydown", handler);
       } catch (err) {
-        // fallback for cross-origin
+        
       }
     });
   </script>
